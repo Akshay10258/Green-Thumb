@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Thin scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px; /* Adjust the width of the scrollbar */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent; /* Make the track transparent */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #4a5568; /* Color of the scrollbar thumb */
+    border-radius: 3px; /* Rounded corners for the thumb */
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #718096; /* Color of the scrollbar thumb on hover */
+  }
+  
+  /* Thin scrollbar for Firefox */
+  .custom-scrollbar {
+    scrollbar-width: thin; /* Make the scrollbar thin */
+    scrollbar-color: #4a5568 transparent; /* Thumb color and track color */
+  }
