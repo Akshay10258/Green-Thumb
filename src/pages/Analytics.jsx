@@ -470,5 +470,4 @@ const Analytics = () => {
     </>
   );
 };
-s
 export default Analytics;
