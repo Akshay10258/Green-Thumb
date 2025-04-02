@@ -10,6 +10,7 @@ Green-Thumb is a React web-app providing useful features for gardeners and plant
 - Features plant and disease identification through photo analysis (plant.id)
 - Includes a community platform for sharing tips and experiences
 - Integrates IoT for real-time monitoring of temperature, humidity, and moisture levels
+- Manual and auto mode for watering of plants with option to set the threshold moisture values 
 - Built using React, Firebase- Realtime DB and Firestore, ESP32 WiFi module, and sensors
 - Tried Connecting it to a webhook to get current status via voice commands via google assisstant
 ## Technologies
