@@ -11,7 +11,7 @@ Green-Thumb is a React web-app providing useful features for gardeners and plant
 - Includes a community platform for sharing tips and experiences
 - Integrates IoT for real-time monitoring of temperature, humidity, and moisture levels
 - Built using React, Firebase- Realtime DB and Firestore, ESP32 WiFi module, and sensors
-- Connected it to a webhook to get current staus via voice commands via google assisstant
+- Tried Connecting it to a webhook to get current status via voice commands via google assisstant
 ## Technologies
 - React.js
 - Firebase (Realtime Database & Firestore)
