@@ -11,10 +11,7 @@ import {
 } from "firebase/auth";
 import { setDoc, doc,getFirestore } from "firebase/firestore";
 
-
 const FirebaseContext = createContext(null);
-
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyAs4SVJU4uF2whc6U7CmZgJUT1Lh7nNoXc",
