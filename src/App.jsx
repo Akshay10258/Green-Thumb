@@ -1,18 +1,3 @@
-// import React from 'react';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import Navbar from './components/Navbar';
-// import Footer from './components/Footer';
-// import Home from './pages/Home';
-// import Analytics from './pages/Analytics';
-// import background from './assets/background.png'; // Import background image
-// import Garden from './pages/Garden';
-// import Disease from './pages/Disease';
-// import Community from './pages/Community';;
-// import RegisterPage from './pages/Register';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -25,6 +10,7 @@ import Community from './pages/Community';
 import RegisterPage from './pages/Register';
 import background from './assets/background.png';
 import LoginPage from "./pages/Login";
+import ProtectedRoute from "./components/ProtectedRoute";
 //import { getFirestore } from 'firebase/firestore';
 //import {firebaseApp} from "./context/Firebase";
 
@@ -43,11 +29,21 @@ const App = () => {
         <Routes>
           <Route path="/" element={<RegisterPage />} />
           < Route path="/login" element={<LoginPage/>}/>
-          <Route path="/home" element={<Home />} />
-          <Route path="/garden" element={<Garden />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/disease-detection" element={<Disease />} />
-          <Route path="/community" element={<Community />} />
+          <Route path="/home" element={<ProtectedRoute>
+                                        <Home />
+                                      </ProtectedRoute>} />
+          <Route path="/garden" element={<ProtectedRoute>
+                                          <Garden />
+                                        </ProtectedRoute>} />
+          <Route path="/analytics" element={<ProtectedRoute>
+                                              <Analytics />
+                                            </ProtectedRoute>} />
+          <Route path="/disease-detection" element={<ProtectedRoute>
+                                                      <Disease />
+                                                    </ProtectedRoute>} />
+          <Route path="/community" element={<ProtectedRoute>
+                                              <Community />
+                                            </ProtectedRoute>} />
         </Routes>
       </div>
     </Router>

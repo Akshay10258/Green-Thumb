@@ -14,14 +14,14 @@ import { setDoc, doc,getFirestore } from "firebase/firestore";
 const FirebaseContext = createContext(null);
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAs4SVJU4uF2whc6U7CmZgJUT1Lh7nNoXc",
-  authDomain: "plantify-355b9.firebaseapp.com",
-  projectId: "plantify-355b9",
-  storageBucket: "plantify-355b9.firebasestorage.app",
-  messagingSenderId: "908108892204",
-  appId: "1:908108892204:web:0b5394ef5e7d15c9fee989",
-  measurementId: "G-3QH8LP7BH1",
-  databaseURL :"https://plantify-355b9-default-rtdb.asia-southeast1.firebasedatabase.app/"
+  apiKey: "AIzaSyDzuGjpAEYPH_c79NJzExMkFzMzXc7B8aU",
+  authDomain: "greenthumb-3c42c.firebaseapp.com",
+  databaseURL: "https://greenthumb-3c42c-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "greenthumb-3c42c",
+  storageBucket: "greenthumb-3c42c.firebasestorage.app",
+  messagingSenderId: "149057776174",
+  appId: "1:149057776174:web:34989a3cf5d1da90a6cdbf",
+  measurementId: "G-SNM1TFGJRV"
 };
 
 export const useFirebase = () => useContext(FirebaseContext);
