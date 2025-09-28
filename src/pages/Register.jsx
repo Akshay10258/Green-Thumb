@@ -20,11 +20,27 @@ const RegisterPage = () => {
       return;
     }
 
+    if (password.length < 6) {
+      setErrorMessage("Password must be at least 6 characters long");
+      return;
+    }
+
     try {
       await firebase.registerUser(email, password, fullName);
       navigate("/login");
     } catch (error) {
-      setErrorMessage(error.message);
+      // Handle Firebase specific errors
+      let friendlyMessage = error.message;
+      
+      if (error.code === 'auth/email-already-in-use') {
+        friendlyMessage = "An account with this email already exists";
+      } else if (error.code === 'auth/weak-password') {
+        friendlyMessage = "Password is too weak";
+      } else if (error.code === 'auth/invalid-email') {
+        friendlyMessage = "Invalid email address";
+      }
+      
+      setErrorMessage(friendlyMessage);
     }
   };
 
@@ -44,7 +60,7 @@ const RegisterPage = () => {
           </span>
         </h1>
         <p className="mb-6 font-mono text-sm text-white">
-          At Greenthumb, we’re here to support gardeners with easy-to-use tools for moisture control, disease detection, and a community of plant enthusiasts. Together, we can help your crops thrive and your farm flourish.
+          At Greenthumb, we're here to support gardeners with easy-to-use tools for moisture control, disease detection, and a community of plant enthusiasts. Together, we can help your crops thrive and your farm flourish.
         </p>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -65,7 +81,7 @@ const RegisterPage = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-3 py-2 rounded-full text-2xl"
-              placeholder="Password"
+              placeholder="Password (min 6 characters)"
               required
             />
           </div>
@@ -101,7 +117,10 @@ const RegisterPage = () => {
           onClick={() => {
             firebase.signinWithGoogle()
               .then(() => navigate("/home"))
-              .catch((error) => console.error("Error signing in:", error));
+              .catch((error) => {
+                console.error("Error signing in:", error);
+                setErrorMessage("Google sign-in failed. Please try again.");
+              });
           }}
           className="w-full mt-4 bg-blue-500 text-white text-2xl p-1 font-medium rounded-full transition-transform duration-200 hover:scale-95 hover:bg-red-600"
         >
